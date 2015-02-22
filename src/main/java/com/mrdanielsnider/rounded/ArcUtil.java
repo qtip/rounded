@@ -11,7 +11,7 @@ public class ArcUtil {
 
     public static Arc roundedEdge(double x1, double y1, double x2, double y2, double x3, double y3, double x4, double y4, double radius) {
 
-        // compute to normal direction vectors for each of the given lines
+        // compute normal direction vectors for each of the given lines
         double mag_a = Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
         double mag_b = Math.sqrt((x4 - x3) * (x4 - x3) + (y4 - y3) * (y4 - y3));
         double vec_a_x = (x2 - x1) / mag_a;
