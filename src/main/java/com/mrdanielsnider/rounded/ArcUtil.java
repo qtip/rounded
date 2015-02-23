@@ -50,6 +50,9 @@ public class ArcUtil {
         double clock_b_x = tangent_b_x - center_x;
         double clock_b_y = tangent_b_y - center_y;
         double arcAngle = Math.acos((clock_a_x * clock_b_x + clock_a_y * clock_b_y) / (radius * radius)) * 180.0 / Math.PI;
+        if (!((clock_a_y + clock_b_y) * (clock_b_x - clock_a_x) >= 0 && (Math.abs(clock_b_y - clock_a_y + clock_a_x + clock_b_x) < 0.0001 || (clock_b_y - clock_a_y) * (clock_a_x + clock_b_x) <= 0))) {
+            arcAngle *= -1;
+        }
 
         return new Arc(center_x, center_y, tangent_a_x, tangent_a_y, arcAngle);
     }

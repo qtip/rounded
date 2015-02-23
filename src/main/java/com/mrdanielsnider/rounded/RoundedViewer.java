@@ -99,6 +99,9 @@ public class RoundedViewer extends JPanel {
         Graphics2D g2 = (Graphics2D) g.create();
         g2.setStroke(new BasicStroke(4));
         double startAngle = Math.acos((arc.startX - arc.centerX) / radius) * 180.0 / Math.PI;
+        if(arc.startY > arc.centerY){
+            startAngle *= -1;
+        }
         g2.drawArc((int) (arc.centerX - radius), (int) (arc.centerY - radius), (int) (2 * radius), (int) (2 * radius), (int) startAngle, (int) arc.arcAngle);
         g2.dispose();
 
