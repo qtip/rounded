@@ -90,7 +90,6 @@ public class RoundedViewer extends JPanel {
         drawSegment(g, vectors[0], vectors[1], vectors[2], vectors[3]);
         drawSegment(g, vectors[4], vectors[5], vectors[6], vectors[7]);
 
-        double radius = 20.0;
         ArcUtil.Arc arc = ArcUtil.roundedEdge(vectors[0], vectors[1], vectors[2], vectors[3], vectors[4], vectors[5], vectors[6], vectors[7], radius);
 
         drawPoint(g, arc.startX, arc.startY);
